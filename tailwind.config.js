@@ -2,7 +2,12 @@ module.exports = {
     purge: ["./src/**/*.{js,ts,jsx,tsx}"],
     darkMode: true, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                indieflower: ["Indie Flower"],
+                nunito: ["Nunito"],
+            }
+        },
     },
     variants: {
         extend: {},
