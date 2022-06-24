@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Footer } from "../components/Footer";
 import { RandomPhoto } from "../util/types";
 import { MainButton } from "../components/Button";
@@ -34,13 +33,5 @@ const Home = () => {
         </>
     );
 };
-
-export async function getStaticProps() {
-    const AllArt = await fetch(`https://api-production-425d.up.railway.app/api/all`).then(res => res.json());
-
-    return {
-        props: { AllArt },
-    };
-}
 
 export default Home;
