@@ -57,12 +57,12 @@ func RandomArtwork(orientation string) *artutil.RandomArt {
 func getArtOfOrientation(orientation string) []artutil.GithubTreeNode {
 	var list []artutil.GithubTreeNode
 	githubresp := artutil.GithubTree{}
-	artutil.RequestImages("https://api.github.com/repos/artmoe/art/git/trees/master?recursive=1", &githubresp)
+	artutil.RequestImages("https://api.github.com/repos/sugoiart/art/git/trees/master?recursive=1", &githubresp)
 
 	for _, s := range githubresp.Tree {
 		if strings.Contains(s.Path, "/" + orientation + "/") {
 			if (s.Kind == "blob") && (strings.HasSuffix(s.Path, ".jpg") || strings.HasSuffix(s.Path, ".png") || strings.HasSuffix(s.Path, ".gif")) {
-				url := "https://raw.githubusercontent.com/artmoe/art/master/" + s.Path
+				url := "https://raw.githubusercontent.com/sugoiart/art/master/" + s.Path
 				url = strings.ReplaceAll(url, " ", "%20")
 				path := s.Path
 				sha := s.Sha

@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>art</title>
+        <title>sugoiart</title>
       </Head>
       <div>
         <Component {...pageProps} />
