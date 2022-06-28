@@ -35,9 +35,10 @@ func RandomArtwork(orientation string) *artutil.RandomArt {
 
 	var list []artutil.GithubTreeNode
 	if orientation != "" {
-		list = getArtOfOrientation(orientation)
+		list = getRawArtOfOrientation(orientation)
 	} else {
 		list = githubresp.Tree
+		orientation = "any"
 	}
 
 	for {
@@ -46,7 +47,7 @@ func RandomArtwork(orientation string) *artutil.RandomArt {
 			url := "https://raw.githubusercontent.com/artmoe/art/master/" + random.Path
 			url = strings.ReplaceAll(url, " ", "%20")
 			sha := random.Sha
-			response = &artutil.RandomArt{Url: url, Status: 200, Sha: sha}
+			response = &artutil.RandomArt{Url: url, Status: 200, Sha: sha, Orientation: orientation}
 			break
 		}
 	}
@@ -54,7 +55,7 @@ func RandomArtwork(orientation string) *artutil.RandomArt {
 	return response
 }
 
-func getArtOfOrientation(orientation string) []artutil.GithubTreeNode {
+func getRawArtOfOrientation(orientation string) []artutil.GithubTreeNode {
 	var list []artutil.GithubTreeNode
 	githubresp := artutil.GithubTree{}
 	artutil.RequestImages("https://api.github.com/repos/sugoiart/art/git/trees/master?recursive=1", &githubresp)
