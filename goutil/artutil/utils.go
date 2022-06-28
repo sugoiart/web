@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"log"
 	"os"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func RequestImages(url string, target interface{}) error {
