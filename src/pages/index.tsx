@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("/api/art/random")
+        fetch("/api/art/random?orien=landscape")
           .then((res) => res.json())
           .then((art) => {
             setArt(art)
@@ -21,7 +21,7 @@ const Home = () => {
     if (!art) return <p>No profile data</p>
     return (
         <>
-            <div className="bg-cover bg-[#262336] bg-top bg-blend-overlay bg-fixed" style={{backgroundImage: `url(${art.url})`}}>
+            <div className="bg-cover bg-[#262336] bg-center bg-blend-overlay bg-fixed" style={{backgroundImage: `url(${art.url})`}}>
                 <div className="h-[90vh] flex justify-center items-center">
                     <div className="max-w-[750px] py-[30px] px-[40px] text-center">
                         <h1 className="text-3xl font-nunito mb-4">~ ✨ Welcome to artmoe ✨ ~</h1>
