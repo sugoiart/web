@@ -7,22 +7,23 @@ import { useState, useEffect } from "react";
 const Home = () => {
     return (
         <>
-            <div className="bg-cover bg-[#13131a] bg-center bg-blend-overlay bg-fixed">
+            <div className="bg-cover bg-normal-bg bg-center bg-blend-overlay bg-fixed">
+                <Header />
                 <div className="main">
-                    <Header />
-                    <div className="h-[800px] flex justify-center items-center">
-                        <div className="max-w-[750px] py-[30px] px-[40px] text-center font-kgcs font-thin">
+                    <div className="h-[800px] flex items-center">
+                        <div className="max-w-[750px] py-[30px] px-[40px] font-kgcs font-thin ml-[200px]">
                             <h1 className="text-3xl mb-4">
-                                a simple, fast, and open source<br />
-                                art api
+                                a simple, fast, and<br />
+                                open source art api
                             </h1>
-                            <div className="flex gap-[20px] justify-center">
+                            <div className="flex gap-[20px] self-start">
                                 <MainButton name="API" link="https://sugoiapi.hayasaka.moe" />
                                 <MainButton name="Source" link="https://github.com/sugoiart/api" />
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <Footer />
             </div>
         </>
