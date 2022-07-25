@@ -6,7 +6,7 @@ export const Header = () => {
         <>
             <div className="sticky top-0 bg-navbar-bg z-50 navbar">
                 <div className="font-kgcs flex items-center px-8 py-5 mx-auto max-w-[1300px] text-2xl">
-                    <h1>sugoiapi</h1>
+                    <h1>sugoiart</h1>
                     <ul className="flex gap-[20px] list-none text-white/70 ml-[40px] text-xl flex-1">
                         <li>
                             <a href="#" className="hover:text-white/90 transition-all duration-200 ease-in-out">home</a>
