@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>sugoiart</title>
+        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/104050203" />
       </Head>
       <div>
         <Component {...pageProps} />
