@@ -10,13 +10,13 @@ const Home = () => {
             <div className="bg-cover bg-normal-bg bg-center bg-blend-overlay bg-fixed">
                 <Header />
                 <div className="main">
-                    <div className="h-[800px] flex items-center">
-                        <div className="max-w-[750px] py-[30px] px-[40px] font-kgcs font-thin ml-[200px]">
+                    <div className="h-[800px] flex items-center justify-center">
+                        <div className="max-w-[750px] py-[30px] px-[40px] font-kgcs font-thin text-center">
                             <h1 className="text-3xl mb-4">
                                 a simple, fast, and<br />
                                 open source art api
                             </h1>
-                            <div className="flex gap-[20px] self-start">
+                            <div className="flex gap-[20px] justify-center">
                                 <MainButton name="API" link="https://sugoiapi.hayasaka.moe" />
                                 <MainButton name="Source" link="https://github.com/sugoiart/api" />
                             </div>

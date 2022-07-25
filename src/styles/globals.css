@@ -29,7 +29,7 @@ a {
 
 .main {
     background-image: url("/background.jpg");
-    background-position: center;
+    background-position-x: center;
     background-blend-mode: overlay;
     background-color: #212129;
 }
