@@ -6,7 +6,12 @@ module.exports = {
             fontFamily: {
                 indieflower: ["Indie Flower"],
                 nunito: ["Nunito"],
-            }
+                kgcs: ["kgcs"],
+            },
+            colors: {
+                "navbar-bg": "rgba(19, 19, 26, 0.8)",
+                "normal-bg": "#13131a",
+            },
         },
     },
     variants: {

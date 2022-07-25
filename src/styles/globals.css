@@ -2,6 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: kgcs;
+    src: url("/fonts/kgcs.ttf");
+}
 
 html,
 body {
@@ -10,6 +14,8 @@ body {
     width: 100vw;
     height: 100vh;
     color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -19,4 +25,11 @@ a {
 
 * {
     box-sizing: border-box;
+}
+
+.main {
+    background-image: url("/background.jpg");
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: #272630;
 }
