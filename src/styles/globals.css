@@ -6,6 +6,14 @@
     font-family: kgcs;
     src: url("/fonts/kgcs.ttf");
 }
+@font-face {
+    font-family: lexreg;
+    src: url("/fonts/lexend-reg.ttf");
+}
+@font-face {
+    font-family: lexbold;
+    src: url("/fonts/lexend-bold.ttf");
+}
 
 html,
 body {

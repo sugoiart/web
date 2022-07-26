@@ -7,6 +7,8 @@ module.exports = {
                 indieflower: ["Indie Flower"],
                 nunito: ["Nunito"],
                 kgcs: ["kgcs"],
+                lexreg: ["lexreg"],
+                lexbold: ["lexbold"],
             },
             colors: {
                 "navbar-bg": "rgba(19, 19, 26, 0.8)",
