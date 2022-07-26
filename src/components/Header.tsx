@@ -9,9 +9,9 @@ export const Header = () => {
     return (
         <>
             <div className="sticky top-0 bg-navbar-bg z-50 navbar">
-                <div className="font-kgcs flex items-center px-8 py-5 mx-auto max-w-[1300px] text-2xl">
+                <div className="font-kgcs flex items-center px-8 py-5 mx-auto max-w-[1300px] text-2xl justify-between md:justify-start">
                     <h1>sugoiart</h1>
-                    <ul className="flex gap-[20px] list-none text-white/70 ml-[40px] text-xl flex-1 font-lexbold">
+                    <ul className="hidden md:flex gap-[20px] list-none text-white/70 ml-[40px] text-xl flex-1 font-lexbold">
                         <li>
                             <a href="#" onClick={scrollToTop} className="hover:text-white/90 transition-all duration-200 ease-in-out">home</a>
                         </li>
