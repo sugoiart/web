@@ -58,7 +58,7 @@ const Home = () => {
                         <hr className="mb-4 mt-6 bg-white/60 border-none h-[1px] max-w-[600px]" />
                         <div className="ml-[25px]">
                             <h2 className="text-2xl">parameters</h2>
-                            <table className="mt-4 border-collapse border-[1px] border-solid border-[#2b2b35] mr-[25px] max-w-[600px]">
+                            <table className="mt-4 border-collapse border-[1px] border-solid border-[#2b2b35] max-w-[600px]">
                                 <tbody>
                                     <tr>
                                         <td className="text-white/80 text-xl w-[150px] border-r-[1px] border-[#2b2b35] px-4 py-2">orien</td>
