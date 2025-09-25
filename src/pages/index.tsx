@@ -1,32 +1,39 @@
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { RandomPhoto } from "../util/types";
 import { MainButton } from "../components/Button";
-import { useState, useEffect } from "react";
+import { useRandomImage } from "../hooks/useRandomImage";
+import { BackgroundState } from "../util/types";
+import { ApiRoute } from "../components/ApiRoute";
 
 const Home = () => {
+	const { url: backgroundImageUrl, isFallback }: BackgroundState = useRandomImage(
+		"https://api.art.hayasaka.moe/v1/art/random?o=landscape",
+		"/background.jpg"
+	);
+
+	const backgroundPositionClass = isFallback ? "bg-top" : "bg-center";
+
 	return (
 		<>
 			<div className="bg-cover bg-normal-bg bg-center bg-blend-overlay bg-fixed">
 				<Header />
-				<div id="#top" className="main">
-					<div className="h-[800px] flex items-center justify-center">
-						<div className="max-w-[750px] py-[30px] px-[40px] font-lexbold font-thin text-center">
-							<h1 className="text-3xl mb-4">
-								a simple, fast, and
-								<br />
-								open source art api
-							</h1>
-							<div className="flex gap-[20px] justify-center">
-								<MainButton
-									name="API"
-									link="https://sugoiapi.hayasaka.moe"
-								/>
-								<MainButton
-									name="Source"
-									link="https://github.com/sugoiart/api"
-								/>
-							</div>
+				<div
+					id="#top"
+					style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+					className={`bg-blend-overlay bg-[#3d3d47] bg-cover ${backgroundPositionClass} h-[90vh] flex items-center justify-center`}
+				>
+					<div className="max-w-[750px] py-[30px] px-[40px] font-lexbold font-thin text-center">
+						<h1 className="text-3xl mb-4">
+							a simple, fast, and
+							<br />
+							open source art api
+						</h1>
+						<div className="flex gap-[20px] justify-center">
+							<MainButton name="API" link="https://api.art.hayasaka.moe" />
+							<MainButton
+								name="Source"
+								link="https://github.com/sugoiart/api"
+							/>
 						</div>
 					</div>
 				</div>
@@ -37,33 +44,34 @@ const Home = () => {
 							GET
 						</h2>
 						<h2 className="text-2xl inline-block ml-[10px]">v1/art/...</h2>
-						<div className="ml-[25px] mt-4">
-							<span className="text-white/80 text-xl">GET v1/art/random</span>
-							<p className="font-lexreg text-white/60">
-								GET a random artwork
-							</p>
-							<div className="flex p-[10px] border-2 border-solid border-[#2b2b35] rounded-[10px] max-w-[550px] mt-3 bg-[#1e1e25] overflow-auto">
-								<pre>
-									<span className="font-lexbold">GET</span>
-									<code className="font-lexreg ml-[10px]">
-										https://sugoiapi.hayasaka.moe/v1/art/random
-									</code>
-								</pre>
-							</div>
-						</div>
 						<br />
-						<div className="ml-[25px] mt-4">
-							<span className="text-white/80 text-xl">GET v1/art/all</span>
-							<p className="font-lexreg text-white/60">GET all artworks</p>
-							<div className="flex p-[10px] border-2 border-solid border-[#2b2b35] rounded-[10px] max-w-[550px] mt-3 bg-[#1e1e25] overflow-auto">
-								<pre>
-									<span className="font-lexbold">GET</span>
-									<code className="font-lexreg ml-[10px]">
-										https://sugoiapi.hayasaka.moe/v1/art/all
-									</code>
-								</pre>
-							</div>
-						</div>
+						<ApiRoute
+							method="GET"
+							route="v1/art/all"
+							description="GET all artworks (supports query parameters)"
+							fullUrl="https://api.art.hayasaka.moe/v1/art/all"
+						/>
+						<br />
+						<ApiRoute
+							method="GET"
+							route="v1/art/random"
+							description="GET a random artwork (supports query parameters)"
+							fullUrl="https://api.art.hayasaka.moe/v1/art/random"
+						/>
+						<br />
+						<ApiRoute
+							method="GET"
+							route="v1/art/sha/:sha"
+							description="GET an artwork by its SHA256 hash"
+							fullUrl="https://api.art.hayasaka.moe/v1/art/sha/:sha"
+						/>
+						<br />
+						<ApiRoute
+							method="GET"
+							route="v1/art/stats"
+							description="GET statistics about the API and the artwork count"
+							fullUrl="https://api.art.hayasaka.moe/v1/art/stats"
+						/>
 						<hr className="mb-4 mt-6 bg-white/60 border-none h-[1px] max-w-[600px]" />
 						<div className="ml-[25px]">
 							<h2 className="text-2xl">parameters</h2>
